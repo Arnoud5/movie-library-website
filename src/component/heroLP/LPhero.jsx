@@ -5,8 +5,8 @@ import heroBg from "./herobg.jpg"
 function LPhero() {
     return (
         <div className="pt-14">
-            <div className="w-screen h-[calc(100vh-56px)] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
-                <div className="w-screen h-[calc(100vh-56px)] bg-gradient-to-t from-black/75 to-black/50">
+            <div className="w-full h-[calc(100vh-56px)] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
+                <div className="w-full h-[calc(100vh-56px)] bg-gradient-to-t from-black/75 to-black/50">
                     <div className="w-11/12 h-full mx-auto flex flex-col justify-center relative">
                         <h1 className="text-left mb-6 text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#269CE1] to-[#58D628]">Tons of movies, discover now.</h1>
                         <form action="" className="flex items-center w-full">
