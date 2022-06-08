@@ -5,3 +5,5 @@ This project is a practice project to learn about react and consuming public API
 # Technology used
 
 This project is made using Create-React-App with react-routerv6 library, and tailwindcss for the styling
+
+live preview : https://movie-library-website.vercel.app/detail/338953
