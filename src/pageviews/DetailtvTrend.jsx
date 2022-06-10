@@ -3,23 +3,23 @@ import Arrow from './backarrow.png'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export default function Detail() {
-    const { idDetail } = useParams();
-    const [details, setDetails] = useState([]);
+    const { idTvDetail } = useParams();
+    const [tvDetails, setTvDetails] = useState([]);
     const navigate = useNavigate();
 
+    const tmdbUrltv = `https://api.themoviedb.org/3/tv/${idTvDetail}?api_key=b34e2c0b820e9f1b23a1ea5e8172fb88&language=en-US`;
     const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
-    const getData = async (idDetail) => {
-        const data = await fetch(`https://api.themoviedb.org/3/tv/${idDetail}?api_key=b34e2c0b820e9f1b23a1ea5e8172fb88&language=en-US`)
+    const getData = async () => {
+        const data = await fetch(tmdbUrltv);
         const detail = await data.json();
-        setDetails(detail)
-
+        setTvDetails(detail)
     }
 
     useEffect(() => {
-        getData(idDetail)
-    }, [idDetail])
-    console.log(details);
+        getData(idTvDetail)
+    }, [idTvDetail]);
+    console.log(tvDetails)
 
     return (
         <div className='pt-14 w-11/12 mx-auto'>
@@ -28,26 +28,23 @@ export default function Detail() {
                     <img src={Arrow} alt="" />
                     <p className='ml-2 text-lg'>Back</p>
                 </button>
-                {details?.map((data) => {
-                    <div key={data.id}>
-                        <div>
-                            <div className="mx-auto my-4 h-80 w-52 aspect-auto bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `url(${baseUrl}${data.poster_path})` }}>{/* movie image */}</div>
-                        </div>
-                        <div>
-                            {data.original_title}
-                        </div>
-                        <div>
-                            {data.vote_average}
-                        </div>
-                        <div>
-                            Description
-                        </div>
-                        <p>
-                            {data.overview}
-                        </p>
+                <div>
+                    <div>
+                        <div className="mx-auto my-4 h-80 w-52 aspect-auto bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `url(${baseUrl}${tvDetails.poster_path})` }}>{/* movie image */}</div>
                     </div>
-                })}
-
+                    <div>
+                        {tvDetails.original_name}
+                    </div>
+                    <div>
+                        {tvDetails.vote_average}
+                    </div>
+                    <div>
+                        Description
+                    </div>
+                    <p>
+                        {tvDetails.overview}
+                    </p>
+                </div>
             </div>
         </div>
     )
