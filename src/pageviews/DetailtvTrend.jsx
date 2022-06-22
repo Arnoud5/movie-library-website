@@ -22,7 +22,7 @@ export default function Detail() {
     console.log(tvDetails)
 
     return (
-        <div className='pt-14 w-11/12 mx-auto'>
+        <div className='pt-14 w-11/12 mx-auto min-h-[calc(100vh-80px)]'>
             <div className='flex flex-col'>
                 <button className='flex items-center' onClick={() => navigate(-1)}>
                     <img src={Arrow} alt="" />

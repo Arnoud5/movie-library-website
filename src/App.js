@@ -25,7 +25,7 @@ function App() {
         <Route path="/detail/:idDetail" element={<Detail />} />
         <Route path="/detailtv/:idTvDetail" element={<DetailTV />} />
       </Routes>
-      <Footer />
+    <Footer />
     </Router>
   );
 }
