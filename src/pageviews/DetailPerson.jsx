@@ -7,11 +7,11 @@ export default function DetailPerson() {
     const [personDetail, setPersonDetails] = useState([]);
     const navigate = useNavigate();
 
-    const tmdbUrltv = `https://api.themoviedb.org/3/person/${idPerson}?api_key=b34e2c0b820e9f1b23a1ea5e8172fb88&language=en-US`;
+    const tmdbUrl = `https://api.themoviedb.org/3/person/${idPerson}?api_key=b34e2c0b820e9f1b23a1ea5e8172fb88&language=en-US`;
     const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
     const getData = async () => {
-        const data = await fetch(tmdbUrltv);
+        const data = await fetch(tmdbUrl);
         const detail = await data.json();
         setPersonDetails(detail)
     }
@@ -19,8 +19,6 @@ export default function DetailPerson() {
     useEffect(() => {
         getData(idPerson)
     }, [idPerson]);
-    console.log(personDetail)
-
     console.log(personDetail)
 
     return (
