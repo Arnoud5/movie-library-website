@@ -29,8 +29,8 @@ function Navbar() {
                 <div className="text-sm text-slate-100 font-semibold sm:flex">
                     <img className="sm:hidden h-4" src={hamburger} alt="phone-Hamburger" onClick={() => { setOpen(true) }} />
                     <button onClick={() => { navigate('/') }} className="hidden sm:block">Home</button>
-                    <button onClick={() => { navigate('/movies') }} className="hidden sm:block sm:mx-24">Movies</button>
-                    <button onClick={() => { navigate('/tvs') }} className="hidden sm:block">TV Shows</button>
+                    {/* <button onClick={() => { navigate('/movies') }} className="hidden sm:block sm:mx-24">Movies</button>
+                    <button onClick={() => { navigate('/tvs') }} className="hidden sm:block">TV Shows</button> */}
                     <button onClick={() => { navigate('/search') }} className="hidden sm:block sm:ml-24">Search</button>
                 </div>
             </div>
@@ -42,8 +42,8 @@ function Navbar() {
                     </div>
                     <div className="flex flex-col justify-around items-center text-xl min-h-[100vw] text-slate-100">
                         <button onClick={() => { navigate('/'); setOpen(false) }} className="">Home</button>
-                        <button onClick={() => { navigate('/movies'); setOpen(false) }} className="">Movies</button>
-                        <button onClick={() => { navigate('/tvs'); setOpen(false) }} className="">TV Shows</button>
+                        {/* <button onClick={() => { navigate('/movies'); setOpen(false) }} className="">Movies</button>
+                        <button onClick={() => { navigate('/tvs'); setOpen(false) }} className="">TV Shows</button> */}
                         <button onClick={() => { navigate('/search'); setOpen(false) }} className="">Search Movies/Tvs</button>
                     </div>
                 </div>

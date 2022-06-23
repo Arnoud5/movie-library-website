@@ -5,6 +5,7 @@ import SearchMovie from "../src/pageviews/SearchMovie" //page2
 import SearchTV from "../src/pageviews/SearchTV";      //page3
 import SearchPage from "./pageviews/SearchPage";       //page4 
 import Detail from "./pageviews/Detail";               //page5
+import DetailPerson from "./pageviews/DetailPerson";
 import DetailTV from "./pageviews/DetailtvTrend";
 
 import {
@@ -24,10 +25,11 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/detail/:idDetail" element={<Detail />} />
         <Route path="/detailtv/:idTvDetail" element={<DetailTV />} />
+        <Route path="/detailPerson/:idPersonDetail" element={<DetailPerson />} />
       </Routes>
     <Footer />
     </Router>
   );
 }
-
+// /detail detail movie
 export default App;
